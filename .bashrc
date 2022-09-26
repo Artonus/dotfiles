@@ -117,3 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+source <(kubectl completion bash)
+alias k=kubectl
+complete -o default -F __start_kubectl k
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
