@@ -124,7 +124,12 @@ cd() {
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 test "$TERM" = screen-256color && export TERM=screen
+# auto completion for commands
+# # kubernetes
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
+# # Github CLI
+eval "$(gh completion -s bash)"
 
-
+# starship terminal prompt
+eval "$(starship init bash)"

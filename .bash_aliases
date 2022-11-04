@@ -1,7 +1,7 @@
 # alias for the dotfiles 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # vscode using flathub
-alias code="flatpak run com.visualstudio.code"
+#alias code="flatpak run com.visualstudio.code"
 alias k=kubectl
 
 # some more ls aliases
