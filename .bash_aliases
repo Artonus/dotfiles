@@ -15,4 +15,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # alias for the backwards compatibility of the docker compose
 alias docker-compose='docker compose'
-alias docker='podman'
+#alias docker='podman'
+alias vim='nvim'
