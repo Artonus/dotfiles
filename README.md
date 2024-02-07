@@ -45,3 +45,6 @@ config config --local status.showUntrackedFiles no
 ```
 
 Use the dotfiles as a standard git repository with `config` command :)
+
+## Storing secrets in form of env variables
+In case you want ot store some secret environment variables you should create `.bash_secrets` file in your home directory. This file will be automatically executed when starting new shell. This file is not commited to this repository for security reasons.

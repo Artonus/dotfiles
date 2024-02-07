@@ -17,3 +17,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias docker-compose='docker compose'
 #alias docker='podman'
 alias vim='nvim'
+alias ld='lazydocker'
