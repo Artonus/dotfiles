@@ -133,3 +133,4 @@ eval "$(gh completion -s bash)"
 
 # starship terminal prompt
 eval "$(starship init bash)"
+eval $(thefuck --alias)
