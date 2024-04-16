@@ -1,0 +1,83 @@
+" Set mapleader
+let g:mapleader = "\<Space>"
+
+" Key mappings
+nnoremap <leader>pv :Ex<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap J mzJ`z
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+nnoremap <leader>vwm :<C-u>lua require("vim-with-me").StartVimWithMe()<CR>
+nnoremap <leader>svwm :<C-u>lua require("vim-with-me").StopVimWithMe()<CR>
+
+" Greatest remap ever
+xnoremap <leader>p "_dP
+
+" Next greatest remap ever by asbjornHaland
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+nnoremap <leader>d "_d
+
+" This is going to get me cancelled
+inoremap <C-c> <Esc>
+
+nnoremap Q <nop>
+nnoremap <C-f> :silent !tmux neww tmux-sessionizer<CR>
+nnoremap <leader>f :lua vim.lsp.buf.format()<CR>
+
+nnoremap <C-k> :cnext<CR>zz
+nnoremap <C-j> :cprev<CR>zz
+nnoremap <leader>k :lnext<CR>zz
+nnoremap <leader>j :lprev<CR>zz
+
+nnoremap <leader>s :%s/\<\C-r><C-w>\>/\C-r><C-w>/gI<Left><Left><Left>
+
+nnoremap <leader>x :!chmod +x %<CR>
+
+nnoremap <leader>vpp :e ~/.config/nvim/lua/artonus/packer.lua<CR>
+nnoremap <leader>mr :CellularAutomaton make_it_rain<CR>
+
+if 1
+  nnoremap <leader><leader> :so<CR>
+endif
+
+
+" Set options
+set guicursor=
+set nu
+set relativenumber
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set smartindent
+
+set nowrap
+
+set noswapfile
+set nobackup
+let &undodir = $HOME . '/.vim/undodir'
+set undofile
+
+set nohlsearch
+set incsearch
+
+set termguicolors
+
+set scrolloff=8
+set signcolumn=yes
+set isfname+=@-@
+
+set updatetime=50
+
+set colorcolumn=100
