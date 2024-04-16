@@ -1,0 +1,8 @@
+import:
+ - "~/.config/alacritty/alacritty-theme/themes/iterm.yaml"
+  #shell:
+  #program: "/bin/zsh"
+  #args: "-l"
+window:
+  #decorations: "None"
+  opacity: 0.85
