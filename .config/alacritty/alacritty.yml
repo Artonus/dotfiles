@@ -4,5 +4,5 @@ import:
   #program: "/bin/zsh"
   #args: "-l"
 window:
-  #decorations: "None"
+  decorations: "Full"
   opacity: 0.85
