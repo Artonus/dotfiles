@@ -147,6 +147,6 @@ search() {
   local searchDir="${2:-.}"
 
   # Run the search
-  grep --color=auto -rin --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger} "$1" "$searchDir"
+  grep --color=auto -rin --exlude="*log" --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger} "$1" "$searchDir"
 }
 
