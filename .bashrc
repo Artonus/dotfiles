@@ -128,9 +128,25 @@ test "$TERM" = screen-256color && export TERM=screen
 # # kubernetes
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
-# # Github CLI
-eval "$(gh completion -s bash)"
 
 # starship terminal prompt
+#eval "$(starship init bash)"
+
+# Created by `pipx` on 2025-03-04 07:26:22
+export PATH="$PATH:/home/bbratus@atsi.zab/.local/bin"
 eval "$(starship init bash)"
-eval $(thefuck --alias)
+search() {
+  # Check if a search term was provided
+  if [ -z "$1" ]; then
+    echo "Usage: search <term> [directory]"
+    echo "Example: search IUserService ./src"
+    return 1
+  fi
+
+  # Set the directory to the second argument or default to the current directory '.'
+  local searchDir="${2:-.}"
+
+  # Run the search
+  grep --color=auto -rin --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger} "$1" "$searchDir"
+}
+
