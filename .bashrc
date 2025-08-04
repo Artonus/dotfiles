@@ -147,6 +147,10 @@ search() {
   local searchDir="${2:-.}"
 
   # Run the search
-  grep --color=auto -rin --exlude="*log" --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger} "$1" "$searchDir"
+  grep --color=auto -rin --exclude="*log" --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger} "$1" "$searchDir"
+}
+clear_nuget_cache() {
+  dotnet nuget locals all --clear && dotnet restore
 }
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
