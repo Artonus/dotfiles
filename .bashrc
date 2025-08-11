@@ -147,10 +147,18 @@ search() {
   local searchDir="${2:-.}"
 
   # Run the search
-  grep --color=auto -rin --exclude="*log" --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger} "$1" "$searchDir"
+  grep -rIin --color=auto -rin --exclude="*log" --exclude="*.pdb" --exclude="*.dll" --exclude-dir={bin,obj,.git,badger,packages,publish,debug,.idea,.venv,gatling-*} "$1" "$searchDir"
 }
 clear_nuget_cache() {
   dotnet nuget locals all --clear && dotnet restore
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+docker_stop_all() {
+  docker stop $(docker ps -a -q)
+}
+
+docker_start_all() {
+  docker start $(docker ps -a -q)
+}

@@ -1,9 +1,0 @@
-fzf
-gcc
-k9s
-kubernetes-cli
-lazydocker
-lazygit
-node
-onefetch
-tldr
