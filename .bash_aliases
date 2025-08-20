@@ -20,3 +20,5 @@ alias vim='nvim'
 alias ld='lazydocker'
 alias lg='lazygit'
 #alias mc='/usr/bin/mc/mc-wrapper.sh'
+
+alias rgf='rg --files | rg'
