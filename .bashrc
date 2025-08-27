@@ -8,6 +8,12 @@ case $- in
       *) return;;
 esac
 
+# Handoff to zsh when available
+if command -v zsh >/dev/null 2>&1 && [ -z "$ZSH_VERSION" ]; then
+  export SHELL="$(command -v zsh)"
+  exec zsh -l
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
