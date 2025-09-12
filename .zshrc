@@ -9,6 +9,12 @@ setopt HIST_IGNORE_SPACE      # ignore commands starting with space
 setopt HIST_IGNORE_ALL_DUPS   # remove older duplicate entries
 setopt SHARE_HISTORY          # share history across sessions
 
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="juanghurtado" # fino, gnzh, jonathan, juanghurtado, robbyrussell
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
 # Colors and pager
 if command -v dircolors >/dev/null 2>&1; then
   eval "$(dircolors -b ~/.dircolors 2>/dev/null || dircolors -b)"
@@ -37,8 +43,9 @@ command -v gh >/dev/null 2>&1 && eval "$(gh completion -s zsh)"
 if [[ "$PATH" != *"/home/linuxbrew/.linuxbrew/opt/fzf/bin"* ]]; then
   PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/fzf/bin"
 fi
-command -v fzf >/dev/null 2>&1 && eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init --cmd cd zsh)"
 
 # TERM tweak for screen
 [[ "$TERM" == "screen-256color" ]] && export TERM=screen
@@ -75,8 +82,3 @@ chpwd() {
   fi
 }
 
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="juanghurtado" # fino, gnzh, jonathan, juanghurtado, robbyrussell
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh

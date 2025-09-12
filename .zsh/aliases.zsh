@@ -21,6 +21,10 @@ alias egrep='egrep --color=auto'
 # Alert after long-running command
 alias alert='notify-send --urgency=low -i "$( [ $? = 0 ] && echo terminal || echo error )" "$(history|tail -n1|sed -e '"'"'s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'"'"')"'
 
+# zoxide for better cd experience
+if command -v your_command_name &> /dev/null; then
+  #alias cd='zoxide'
+fi
 # Docker / tooling
 alias docker-compose='docker compose'
 
@@ -31,3 +35,12 @@ alias lg='lazygit'
 
 # ripgrep helper
 alias rgf='rg --files | rg'
+
+if [ -f /usr/local/bin/cpg ]; then
+  alias cp='/usr/local/bin/cpg -g'
+fi
+
+if [ -f /usr/local/bin/mvg ]; then
+  alias cp='/usr/local/bin/mvg -g'
+fi
+
